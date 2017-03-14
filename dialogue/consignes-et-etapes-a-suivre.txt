@@ -1,0 +1,18 @@
+1/ Créer une base de donnée "dialogue" avec une table "commentaire"
+ -> id_commentaire INT(3) - AI - PK 
+ -> pseudo VARCHAR (25)
+ -> message TEXT
+ -> date_enregistrement DATETIME
+  DATETIME : NOW()
+
+2/ Créer le fonctionnement qui permet d'ajouter un commentaire dans la BDD
+ -> 2.1 : Se connecter à la BDD avec PDO
+ -> 2.2 : Récupérer les infos du formulaire (print_r())
+ -> 2.3 : Insérer les infos dans la BDD (attention... données sensible, une requete prepare() + bindParam() + execute() serait idéale)
+
+3/ Afficher les commentaires enregistrés
+ -> 3.1 : Récupérer toutes les infos de tous les commentaires
+ -> 3.2 : Afficher sous forme de debug (print_r)
+ -> 3.3 : créer la boucle au bon endroit pour afficher tous commentaires postés ainsi que le pseudo de l'auteur, la date et l'heure comme sur le modèle. 
+
+4/ Améliorer le tout en triant les commentaires du plus récent au plus ancien. 
