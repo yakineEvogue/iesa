@@ -1,0 +1,13 @@
+.container{
+border: 1px solid;
+} 
+.bordureRouge{ border: 3px solid red; padding: 10px; }
+.bordureVerte{ border: 3px solid green; padding: 10px; }
+.bordureBleue{ border: 3px solid blue; padding: 10px; }
+.bordureJaune{ border: 3px solid yellow; padding: 10px; }
+.bordureOrange{ border: 3px solid orange; padding: 10px; }
+
+footer{text-align: center;}
+/* 
+!important
+*/
