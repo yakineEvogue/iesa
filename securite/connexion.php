@@ -54,7 +54,7 @@ if($_POST){
 	
 	$_POST['pseudo'] = htmlentities(addslashes($_POST['pseudo']));
 	$_POST['mdp'] = htmlentities(addslashes($_POST['mdp']));
-	
+	Evogue
 	echo '<pre>'; 
 	print_r($_POST);
 	echo '</pre>';
