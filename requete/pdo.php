@@ -87,4 +87,70 @@ Si notre requete retourne normalement 1 résultat mais potentiellement plusieurs
 */
 
 
+//4 : REQUETE avec query() (SELECT, SHOW) avec plusieurs résultats et fetchAll()
+
+$resultat = $pdo -> query("SELECT * FROM employes");
+// $resultat est inexploitable !! 
+
+// ma requete retourne plusieurs résultats !! ---> fetchAll()
+
+
+$employes = $resultat -> fetchAll(PDO::FETCH_ASSOC);
+
+echo '<pre>';
+print_r($employes); 
+echo '</pre>'; 
+
+for($i = 0; $i < count($employes); $i++){
+	echo 'Bonjour ' . $employes[$i]['prenom'] . '<hr/>';
+}
+
+foreach($employes as $valeur){
+	echo 'Bonjour ' . $valeur['prenom'] . '<hr/>';
+}
+
+
+
+
+
+//5 : Requete prepare() puis execute() avec passage d'arguments via bindParam()
+
+$id = '350'; // En admettant que $id soit une donnée sensible récupérée dans l'URL ou un formulaire (modifiable par l'utilisateur)
+
+$resultat = $pdo -> prepare("SELECT * FROM employes WHERE id_employes = :id");
+$resulat -> bindParam(':id', $id, PDO::PARAM_INT); 
+$resultat -> execute();
+
+// ---------- avec plusieurs données sensibles :
+
+$resultat = $pdo -> prepare("SELECT * FROM employes WHERE prenom = :prenom OR service = :service");
+
+$prenom = 'Amandine';
+$service = 'Informatique';
+
+$resultat -> bindParam(':prenom', $prenom, PDO::PARAM_STR);
+$resultat -> bindParam(':service', $service, PDO::PARAM_STR);
+
+$resultat  -> execute(); 
+
+
+// Avec BindValue() :
+
+$resultat = $pdo -> prepare("SELECT * FROM employes WHERE id_employes = :id");
+$resulat -> bindValue(':id', '350', PDO::PARAM_INT); 
+$resultat -> execute();
+
+
+/* 
+	Les requetes préparées nous permettent de gérer en partie la sécurité des données transmises via GET ou POST. (données sensibles !)
+	
+	Lorsqu'on prépare une requête on remplace les données  sensibles par un marqueur (soit ':' soit '?'). Ensuite on affecte les valeurs à ces données via bindParam() ou bindValue()
+	Et enfin on éxécute la requête execute()
+
+*/
+
+
+
+
+
 
