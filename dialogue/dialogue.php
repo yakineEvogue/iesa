@@ -32,9 +32,9 @@ $resultat = $pdo -> query("SELECT pseudo, message, date_format(date_enregistreme
 
 $commentaires = $resultat -> fetchAll(PDO::FETCH_ASSOC);
 
-echo '<pre>';
-print_r($commentaires);
-echo '</pre>';
+// echo '<pre>';
+// print_r($commentaires);
+// echo '</pre>';
 
 ?>
 
