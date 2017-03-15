@@ -1,3 +1,44 @@
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=dialogue', 'root', '');
+
+if($_POST){
+	// echo '<pre>';
+	// print_r($_POST);
+	// echo '</pre>';
+	
+	// Traitements pour insérer un nouveau commentaire : 
+	
+	
+	$resultat = $pdo -> prepare("INSERT INTO commentaire (pseudo, message, date_enregistrement) VALUES ( :pseudo,  :message, NOW())");
+	
+	$resultat -> bindParam(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
+	
+	$resultat -> bindParam(':message', $_POST['message'], PDO::PARAM_STR);
+	
+	if($resultat -> execute()){
+		header('location:dialogue.php');
+	}
+	// Si la requête s'est bien passée, je recharge la page pour "vider" le post ! 
+	
+}
+
+// Traitements pour récupérer tous les commentaires : 
+
+$resultat = $pdo -> query("SELECT pseudo, message, date_format(date_enregistrement, '%d/%m/%Y') as date_fr, date_format(date_enregistrement, '%h:%i:%s') as heure_fr FROM commentaire ORDER BY date_enregistrement DESC "); 
+
+
+
+// $resultat contient toutes les infos, mais est inexploitable en l'état. 
+
+$commentaires = $resultat -> fetchAll(PDO::FETCH_ASSOC);
+
+echo '<pre>';
+print_r($commentaires);
+echo '</pre>';
+
+?>
+
+
 <html>
 	<head>
 		<link type="text/css" rel="stylesheet" href="styles.css"/>
@@ -20,14 +61,32 @@
 			</form>
 			<aside>
 			
-			<!-- Début d'un message -->
-			<div class="comment">
-				<p class="user">Par Yakine le 23/02/2017 à 9:50:22</p>
-				<div class="content">
-					<p>Ceci est un exemple de commentaire sur l'article</p>
+			
+			<?php 
+			for($i = 0; $i < count($commentaires); $i++){
+				echo '<!-- Début d\'un message -->';
+				echo '<div class="comment">';
+				echo '	<p class="user">Par ' . $commentaires[$i]['pseudo'] . ' le ' . $commentaires[$i]['date_fr'] . ' à ' . $commentaires[$i]['heure_fr'] . '</p>';
+				echo '	<div class="content">';
+				echo '		<p>' . $commentaires[$i]['message'] . '</p>';
+				echo '	</div>';
+				echo '</div>';
+				echo '<!-- fin d\'un message -->';
+			}
+			?>
+			
+			
+			
+			<?php foreach($commentaires as $valeur) : ?>
+				<!-- Début d\'un message -->
+				<div class="comment">
+					<p class="user">Par <?= $valeur['pseudo'] ?> la <?= $valeur['date_fr'] ?> à <?= $valeur['heure_fr'] ?></p>
+					<div class="content">
+						<p><?= $valeur['message'] ?></p>
+					</div>
 				</div>
-			</div>
-			<!-- fin d'un message -->
+				<!-- fin d\'un message -->
+			<?php endforeach; ?>
 			
 			
 			
