@@ -11,7 +11,7 @@ session_start();
 
 
 // variables
-
+$msg = '';
 
 
 // chemin 
@@ -19,5 +19,6 @@ session_start();
 
 
 // autres inclusions
+require('fonction.inc.php');
 
 
