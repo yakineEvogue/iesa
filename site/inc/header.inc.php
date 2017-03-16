@@ -10,12 +10,34 @@
 				<span>
 					<a href="" title="Mon Site">MonSite.com</a>
                 </span>
+				
+				
 				<nav>
-					<a href="">Inscription</a>
-					<a href="">Connexion</a>
-					<a href="">Accès à la boutique</a>
-					<a href="">Voir votre panier</a>
+				
+		<?php if(userConnecte()) : ?>	
+			<a href="profil.php">Profil</a>
+			<a href="boutique.php">Boutique</a>
+			<a href="panier.php">Panier</a>
+			<a href="deconnexion.php">Deconnexion</a>	
+		<?php else : ?>
+			<a href="inscription.php">Inscription</a>
+			<a href="connexion.php">Connexion</a>
+			<a href="boutique.php">Boutique</a>
+			<a href="panier.php">Panier</a>	
+		<?php endif; ?>
+				
+				
+		<?php if(userAdmin()) : ?>			
+			<a href="backoffice/gestion_produit.php">Gestion produit</a>
+		<?php endif; ?>			
+					
+					
+					
 				</nav>
+				
+				
+				
+				
 			</div>
         </header>
         <section>

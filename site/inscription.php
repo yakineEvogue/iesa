@@ -1,6 +1,13 @@
 ﻿<?php
 require_once('inc/init.inc.php');
 
+// Traitement pour la redirection :
+if(userConnecte()){
+	header('location:profil.php');
+}
+
+
+// traitement de l'inscription :
 if($_POST){
 	
 	// vérifier ce qu'on récupère

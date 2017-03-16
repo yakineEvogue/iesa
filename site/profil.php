@@ -1,6 +1,12 @@
 <?php 
 require_once('inc/init.inc.php');
 
+// traitement pour la redirection : 
+if(!userConnecte()){ // /!\ !userConnecte() signifie == FALSE 
+	header('location:connexion.php');
+}
+
+
 
 // extract() me permet de transformer les valeurs d'un array en variables... pratique, non ? 
 extract($_SESSION['membre']);
@@ -31,11 +37,6 @@ require_once('inc/header.inc.php');
 		</ul>
 	</div>
 </div>
-
-
-
-
-
 
 <?php 
 require_once('inc/footer.inc.php');
