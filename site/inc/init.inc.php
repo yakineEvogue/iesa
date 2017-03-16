@@ -15,8 +15,10 @@ $msg = '';
 
 
 // chemin 
+define('RACINE_SITE', '/PHP/site/');
+define('RACINE_SERVEUR', $_SERVER['DOCUMENT_ROOT']);
 
-
+//echo RACINE_SERVEUR . RACINE_SITE . '<hr/>';
 
 // autres inclusions
 require('fonction.inc.php');
