@@ -15,7 +15,7 @@ $msg = '';
 
 
 // chemin 
-define('RACINE_SITE', '/PHP/site/');
+define('RACINE_SITE', '/iesa/php_procedural/site/');
 define('RACINE_SERVEUR', $_SERVER['DOCUMENT_ROOT']);
 
 //echo RACINE_SERVEUR . RACINE_SITE . '<hr/>';

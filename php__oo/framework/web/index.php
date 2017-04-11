@@ -19,9 +19,22 @@ require_once(__DIR__ . '/../vendor/autoload.php');
 //-----------------------
 
 //TEST 3 : EntityRepository
-$er = new Manager\EntityRepository;
+// $er = new Manager\EntityRepository;
 //$resultat = $er -> findAll();
-$resultat = $er -> find(5);
+// $resultat = $er -> find(5);
+// var_dump($resultat);
+//-------------------------
+
+// TEST 4 : ProduitRepository (et ses fonctions)
+$pr = new Repository\ProduitRepository;
+// $resultat = $pr -> getAllProduit();
+// $resultat = $pr -> getProduitById(5);
+// $resultat = $pr -> getAllCategorie();
+$resultat = $pr -> getAllProduitByCategorie('chemise');
 var_dump($resultat);
+
+
+
+
 
 

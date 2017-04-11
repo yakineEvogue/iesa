@@ -38,7 +38,11 @@ Natures des différents fichiers :
 			- EntityRepository.php : 
 			Un repository centralise tout ce qui touche à la BDD et à la récupération des entités. Concrètement il ne devrait pas y avoir de requête dans un autre fichier qu'un repository.
 		
-		
+	vendor/
+		Repository/
+			- ProduitRepository.php : 
+			Ce fichier contient toutes les fonctions liées à l'entité Produit, et demandera à l'EntityRepository d'effectuer les requêtes. Il contiendra également toutes les requêtes spécifiques à cette entité, et qui ne peuvent pas être génériques. 
+			
 		
 		
 		

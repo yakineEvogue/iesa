@@ -85,8 +85,6 @@ class EntityRepository
 	//fonction pour inserer un enregistre dans une table : 
 	public function register(){
 		$req = "INSERT INTO " . $this -> getTableName() . " (" . implode(array_keys($_POST), ',') . ") VALUES (" . "'" . implode($_POST, "','") . "'" . ")";
-		
-		echo $req;
 
 		//req = "INSERT INTO produit (reference, categorie) VALUES ('$_POST[reference]', '$_POST[categorie]')"
 		// array_key() nous permet de parcourir les indices d'un ARRAY. Dans notre application les indices de $_POST (les names de nos champs) doivent absolument correspondre aux noms de nos champs dans nos tables.  
@@ -97,16 +95,4 @@ class EntityRepository
 		//Nous pourrions egalement retourner l'ID de l'enregistrement : 
 		// return $this -> getDb -> lastInsertId();
 	} 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
