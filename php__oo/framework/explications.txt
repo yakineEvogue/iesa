@@ -1,0 +1,44 @@
+Arborescence : 
+	app/ : La configuration de l'application et autres ressources générales (templates, fichiers de traduction etc...)
+
+	src/ : Le code PHP spécifique au projet
+
+	vendor/ : Classes et bibliothèques exterieures, les entités, les models, et le code général
+
+	web/ : Le repertoire web (point d'entrée du site. CSS, JAVASCRIPT, IMG, PHOTO etc...)
+-------------------------------------------
+Natures des différents fichiers : 
+	app/
+		Config/
+			- parameters.php :
+			Contient les paramètres de connexion à la BDD
+		
+		- Config.php : 
+		Ce fichier est la class qui représente la configuration. Il contient l'inclusion des paramètres (parameters.php) et return la partie connect pour les infos de connexion à la BDD. 
+
+	vendor/
+		- autoload.php :
+		permet d'inclure les bons fichier lors d'une instanciation (new)
+		PLus tard, les noms des namespace seront identiques aux noms de nos dossier, l'autoload pourra donc trouver la route pour inclure les fichiers...
+		
+	vendor/
+		Entity/
+			- Produit.php; Commande.php; 	Membre.php : 
+			Ces fichiers contiennent le propriétés de nos entités. Les propriétés sont les même que les champs dans la BDD. 
+				
+	web/
+		- index.php : 
+		Clé d'entrée de notre application
+		
+	vendor/
+		Manager/
+			- PDOManager.php :
+			Cette classe représente la connexion à la base de données. Elle contient notre objet PDO grâce auquel nous pourrons effectuer des requêtes. Cette classe est un SINGLETON ! Il ne pourra y avoir qu'une seule connexion à la BDD. 
+		
+			- EntityRepository.php : 
+			Un repository centralise tout ce qui touche à la BDD et à la récupération des entités. Concrètement il ne devrait pas y avoir de requête dans un autre fichier qu'un repository.
+		
+		
+		
+		
+		
