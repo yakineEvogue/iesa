@@ -7,7 +7,7 @@ class Autoload
 {
 	public static function className($nom_de_la_classe){
 		
-		echo '<pre>Autoload : ' . $nom_de_la_classe;
+		//echo '<pre>Autoload : ' . $nom_de_la_classe;
 		
 		//new Controller\produitController
 		//Controller/produitController.php
@@ -24,7 +24,7 @@ class Autoload
 			//$path = '../src/Controller/produitController.php'
 		}
 
-		echo "\n => $path</pre><hr/>"; // Pour voir les classes instanciées et les fichiers requis
+		//echo "\n => $path</pre><hr/>"; // Pour voir les classes instanciées et les fichiers requis
 		
 		require $path;
 

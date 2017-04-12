@@ -1,0 +1,206 @@
+/**************************************************** GENERAL ************************************************/
+*{ margin: 0; }
+body{ font-family : verdana; font-size: 12px; }
+a{ text-decoration: none; color: #000; }
+.conteneur{ margin: 0 auto; max-width: 1170px; }
+/**************************************************** HAUT ************************************************/
+header { background: #000000; padding: 5px; text-align: center; }
+header  span{ color: #fff; font-weight: bold; text-transform: uppercase; margin-right: 5%; }
+header  nav{ display: inline; }
+header  a{ color: #ffffff; text-decoration: none; padding: 5px 5px; }
+header  nav  a:hover, a.active{ background: #04baf6; }
+/**************************************************** MILIEU ************************************************/
+section{ padding: 30px; min-height: 800px; }
+/**************************************************** BAS ************************************************/
+footer{ background: #000; color: white; text-align: center; padding: 7px 0;}
+/**************************************************** GENERAL ************************************************/
+.erreur{ background: #ff0000; padding: 5px; margin: 5px; }
+.validation{ background: #669933; padding: 5px; margin: 5px; }
+.cadre{ border: 1px solid #c0c0c0; width: 30%;}
+.cadre  h2{ background: #c0c0c0; margin: 0; text-align: center; font-size: 15px; padding: 5px; }
+.cadre  p{ padding: 10px; }
+.centre{text-align: center;}
+/**************************************************** BOUTIQUE ************************************************/
+.boutique-gauche{ float: left; width: 30%; background: #f2f2f2; min-height: 500px; margin-right: 10%; padding-top: 10px; text-align: center; }
+.boutique-gauche  ul{ list-style: none; padding: 0; }
+.boutique-gauche  ul  li  a{ display: block; padding: 10px; }
+.boutique-gauche  ul  li  a:hover{ background: #04baf6; color: #fff; }
+.boutique-droite{float: left; width: 60%; }
+.boutique-produit{ float: left; width: 30%; text-align: center; padding: 5%; border-bottom: 1px solid #c0c0c0; }
+.boutique-produit:hover{ background: #c0c0c0; }
+/**************************************************** BOUTIQUE ************************************************/
+
+
+
+
+
+
+
+/**************************************************** Formulaire ************************************************/
+form{
+	margin-top: 20px; 
+	padding: 20px;
+	background : silver;
+	overflow: hidden;
+}
+
+form label{
+	float: left; 
+	width: 25%; 
+	height: 40px; 
+	line-height: 40px; 
+	vertical-align: middle; 
+	margin-top: 10px;
+}
+
+form input, form select, form textarea{
+	float: left; 
+	width: 70%; 
+	height: 40px; 
+	line-height: 40px; 
+	vertical-align: middle;
+	margin-top: 10px;	
+	text-indent: 20px;
+	border: none;
+	border: 1px solid white;
+}
+
+form input[type='file']{
+	text-indent: 0;
+	padding-top: 10px;
+	line-height: 20px;
+	padding-left: 5%;
+	width:65%;
+	height: 30px;
+	background-color: grey;
+}
+
+form textarea{
+	height: 120px; 
+	resize: none;
+	border: none;
+}
+
+form input:focus{
+	border: 1px solid black;
+}
+
+form input[type='submit']{
+	margin-left: 25%;
+}
+
+form input[type='submit']:hover{
+	cursor: pointer;
+}
+
+form input[type="submit"]{
+	border : 2px solid grey; 
+	background : transparent;
+	color: grey;
+	font-weight: bold;	
+	border-radius : 3px; 
+	padding: 10px;
+	text-align: center; 
+	cursor: pointer;
+	transition: 0.5s;	
+	vertical-align: middle; 
+	line-height: 20px; 
+	text-indent: 0px;
+	
+}
+
+form input[type="submit"]:hover{
+	background-color: grey; 
+	color: white; 
+	transition: 1.5s;
+	
+}
+
+table{ border-collapse: collapse;}
+hr{
+	margin: 20px 0;
+}
+h1{margin-bottom: 20px;}
+table tr td{
+text-align: center;
+}
+td, th{ padding: 5px; }
+
+/******** PROFIL *******/
+
+.profil{
+	background: silver; 
+	padding: 20px; 
+	border-radius: 10px; 
+	margin-top: 20px; 
+}
+
+.profil ul,
+.profil li{
+	list-style:none; 
+	margin: 0; 
+	padding: 0;
+}
+
+.profil_img{
+	width: 90%;
+	border: 7px solid white; 
+	box-shadow: 0px 3px 5px grey;
+	overflow:hidden;
+	
+}
+
+.profil_img img{
+	width: 100%;
+	max-width:200px;
+}
+
+
+
+.profil_adresse,
+.profil_infos{
+	border: 1px solid grey;
+	margin: 10px 0;
+	padding: 10px;
+}
+
+
+span.bulle{
+	color: white; 
+	text-align: center; 
+	width: 15px; 
+	height: 16px; 
+	border-radius: 15px; 
+	line-height: 15px; 
+	vertical-align: middle; 
+	background: red;
+	margin-left: 4px;
+	display: inline-block;
+	margin-right: 5px;
+	font-size: 10px;
+	font-family: arial;
+}
+
+
+/* Notation */
+.notation{
+	height: 20px;
+	margin-top: 15px
+}
+
+.notation a.star{
+	height: 15px; 
+	width: 15px; 
+	display: block;
+	float: left; 
+	margin: 0 2px;
+	background: url(../img/star.png) left top no-repeat;
+	background-size: 15px 15px;
+
+}
+
+.notation a.star:hover {
+	background: url(../img/star-2.png) left top no-repeat;
+	background-size: 15px 15px;
+}
+

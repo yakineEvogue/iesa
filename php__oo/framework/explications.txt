@@ -43,6 +43,46 @@ Natures des différents fichiers :
 			- ProduitRepository.php : 
 			Ce fichier contient toutes les fonctions liées à l'entité Produit, et demandera à l'EntityRepository d'effectuer les requêtes. Il contiendra également toutes les requêtes spécifiques à cette entité, et qui ne peuvent pas être génériques. 
 			
+	vendor/
+		Controller/
+			- Controller.php : 
+			C'est le controller général de l'application. Il doit être en mesure d'appeller des repository (en fonction de l'entité), et contient la méthod render() qui permet d'afficher les vues. 
+			
 		
+	src/
+		Controller/
+			ProduitController.php : 
+			Cette classe hérite du controller général, et permet de déclencher toutes les actions spécifiques à l'entité Produit. 
+			
+			
+	web/
+		css/, img/, photo/ : à copier/colle de l'ancien site en procédural. Si on avait des dossier JS, FONTS ils seraient dans ce repertoire. 
 		
-		
+	src/
+		Views/
+			- layout.html :
+			Structure de base de notre site (header, nav, footer). Si notre site comportait plusieurs structure de page diférentes (ex : home et mentions légales ne se ressemblent pas) alors nous aurions plusieurs layouts.
+			
+	src/
+		Views/
+			Produit/, Membre/, Commande/ : 
+			Chacun de ses dossiers va contenir les vues appartenants à son entité
+			
+	src/
+		Views/
+			Produit/
+				produit.html, produits.html : 
+				Ces deux fichiers sont 2 des vues de l'entité Produit. La premiere (anciennement fiche_produit.php) permet d'afficher la page produit et la seconde une page avec plusieurs (anciennement page boutique.php)
+				
+			
+	vendor/
+		Manager/
+			Application.php : 
+			Interupteur de application. Il récupère les infos dans l'url et instancie la bonne classe, et lance la bonne méthode (action)
+			
+			
+			
+			
+			
+			
+			

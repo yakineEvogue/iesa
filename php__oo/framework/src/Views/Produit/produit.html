@@ -1,0 +1,65 @@
+<!-- 
+	src/
+		Views/
+			Produit/
+				-> produit.html
+-->
+
+<!-- 
+$produit est un array avec les infos du produit
+$title = titre du produit
+$suggestion array multi avec tous les produits suggérés
+
+-->
+
+<h1><?= $title ?></h1>
+<img src="photo/<?= $produit['photo'] ?>" width="200" />
+<p>Détails du produit : </p>
+<ul>
+	<li>Réf : <?= $produit['reference'] ?></li>
+	<li>Catégorie : <?= $produit['categorie'] ?></li>
+	<li>Couleur : <?= $produit['couleur'] ?></li>
+	<li>Taille : <?= $produit['taille'] ?></li>
+	<li>Public : <?php if($produit['public'] == 'm'){echo 'Homme';}elseif($produit['public'] == 'f'){echo 'Femme';}else{echo 'Homme et Femme';} ?></li>
+	<li>Prix : <b style="color:red; font-size: 20px"><?= $produit['prix'] ?>€</b></li>
+</ul>
+
+<br/><br/>
+<p>Description du produit : </p>
+<em><?= $produit['description'] ?></em>
+<br/><br/>
+<fieldset>
+	<legend>Acheter ce produit</legend>
+	<form action="" method="post">
+		<select style="max-width: 100px; display: inline-block" name="quantite">
+			<option>Quantité</option>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
+		<input style="display: inline-block" type="submit" value="Ajouter au panier"/>
+	</form>
+</fieldset>
+
+
+<!-- Consignes : Ajouter des suggestions de produit :
+	- Soit de la même categorie (moins le pdt actuel)
+	- Soit toutes les autres catégories
+ -->
+<br/><br/>
+<fieldset>
+	<legend>Suggestions de produits :</legend>
+	<?php foreach($suggestions as $valeur) : ?>
+	<div class="boutique-produit">
+		<h3><?= $valeur['titre'] ?></h3>
+		<a href="?controller=produit&action=show&id=<?= $valeur['id_produit'] ?>"><img src="photo/<?= $valeur['photo'] ?>" height="100"/></a>
+		<p style="font-weight: bold; font-size: 20px; color: red;"><?= $valeur['prix'] ?>€</p>
+		<p style="height: 40px"><?= substr($valeur['description'], 0, 45) ?>...</p>
+		<a style="padding: 5px 15px; background: red; color: white; text-align: center; border: 2px solid black; border-radius: 3px" href="?controller=produit&action=show&id=<?= $valeur['id_produit'] ?>">Voir la fiche</a>
+	</div>
+	<?php endforeach; ?>
+	
+	
+</fieldset>

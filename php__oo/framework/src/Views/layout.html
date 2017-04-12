@@ -1,0 +1,39 @@
+<!-- 
+	src/
+		Views/
+			-> layout.html
+ -->
+ <!Doctype html>
+<html>
+    <head>
+        <title>Mon Site</title>
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    <body>    
+        <header>
+			<div class="conteneur">                 
+				<span>
+					<a href="" title="Mon Site">MonSite.com</a>
+                </span>
+				<nav>
+					<a href="">Connexion</a>
+					<a href="">Inscription</a>
+					<a href="?controller=produit&action=showall">Boutique</a>
+					<a href="">Panier</a>
+				</nav>
+			</div>
+        </header>
+        <section>
+			<div class="conteneur"> 
+			
+				<?= $content ?>
+				
+			</div>
+        </section>
+        <footer>
+			<div class="conteneur">    
+				2016 - Tous droits reservés.
+			</div>
+        </footer>
+    </body>
+</html>
